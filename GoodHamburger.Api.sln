@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.6.11716.218
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoodHamburger.Api", "GoodHamburger.Api\GoodHamburger.Api.csproj", "{FEDD9D98-911C-41EE-A5FF-4CA6BCB0920E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoodHamburger.Domain", "GoodHamburger.Domain\GoodHamburger.Domain.csproj", "{0B4F8677-B047-4025-97DA-A019ABA1B478}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoodHamburger.Application", "GoodHamburger.Application\GoodHamburger.Application.csproj", "{14F587E0-8887-451B-B733-3C5453E390A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoodHamburger.Infrastructure", "GoodHamburger.Infrastructure\GoodHamburger.Infrastructure.csproj", "{A4AF5A04-86C8-49F9-A2EA-789A7DC5F873}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoodHamburger.UnitTests", "GoodHamburger.UnitTests\GoodHamburger.UnitTests.csproj", "{62C6D734-6D3C-4795-9383-D959F387663D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FEDD9D98-911C-41EE-A5FF-4CA6BCB0920E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEDD9D98-911C-41EE-A5FF-4CA6BCB0920E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEDD9D98-911C-41EE-A5FF-4CA6BCB0920E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEDD9D98-911C-41EE-A5FF-4CA6BCB0920E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B4F8677-B047-4025-97DA-A019ABA1B478}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B4F8677-B047-4025-97DA-A019ABA1B478}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B4F8677-B047-4025-97DA-A019ABA1B478}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B4F8677-B047-4025-97DA-A019ABA1B478}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14F587E0-8887-451B-B733-3C5453E390A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14F587E0-8887-451B-B733-3C5453E390A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14F587E0-8887-451B-B733-3C5453E390A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14F587E0-8887-451B-B733-3C5453E390A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4AF5A04-86C8-49F9-A2EA-789A7DC5F873}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4AF5A04-86C8-49F9-A2EA-789A7DC5F873}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4AF5A04-86C8-49F9-A2EA-789A7DC5F873}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4AF5A04-86C8-49F9-A2EA-789A7DC5F873}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62C6D734-6D3C-4795-9383-D959F387663D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62C6D734-6D3C-4795-9383-D959F387663D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62C6D734-6D3C-4795-9383-D959F387663D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62C6D734-6D3C-4795-9383-D959F387663D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8DCF5E32-FE85-4CC4-9A9C-3DEC81C6CB15}
+	EndGlobalSection
+EndGlobal
