@@ -1,4 +1,5 @@
-﻿using FluentValidation.Results;
+﻿using FluentValidation;
+using FluentValidation.Results;
 using GoodHamburger.Application.Interfaces;
 using GoodHamburger.Application.Validations;
 using Microsoft.AspNetCore.Mvc;
@@ -8,8 +9,17 @@ namespace GoodHamburger.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class GoodHamburgerController(IGoodHamburgerService goodHamburgerService) : ControllerBase
+    public class GoodHamburgerController(
+        IGoodHamburgerService goodHamburgerService,
+        GoodHamburgerValidator validator) : ControllerBase
     {
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            IEnumerable<MenuResponse> orders = await goodHamburgerService.GetAllAsync();
+            return Ok(orders);
+        }
+
         [HttpGet("menu")]
         public IActionResult GetMenu()
         {
@@ -26,7 +36,6 @@ namespace GoodHamburger.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] MenuRequest request)
         {
-            GoodHamburgerValidator validator = new();
             ValidationResult validation = await validator.ValidateAsync(request);
             if (!validation.IsValid)
             {
@@ -40,7 +49,6 @@ namespace GoodHamburger.Api.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] MenuRequest request)
         {
-            GoodHamburgerValidator validator = new();
             ValidationResult validation = await validator.ValidateAsync(request);
             if (!validation.IsValid)
             {

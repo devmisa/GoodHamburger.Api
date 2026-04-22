@@ -9,6 +9,12 @@ namespace GoodHamburger.Application.Services
 {
     public class GoodHamburgerService(IGoodHamburgerRepository repository) : IGoodHamburgerService
     {
+        public async Task<IEnumerable<MenuResponse>> GetAllAsync()
+        {
+            IEnumerable<Menu> menus = await repository.GetAllAsync();
+            return menus.Select(m => m.ToResponse());
+        }
+
         public async Task<MenuResponse?> GetByIdAsync(int id)
         {
             Menu? menu = await repository.GetByIdAsync(id);

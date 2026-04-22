@@ -31,6 +31,27 @@ namespace GoodHamburger.UnitTests.Infrastructure
             IncludeSoda = soda
         };
 
+        // GetAllAsync
+
+        [Fact]
+        public async Task GetAllAsync_ReturnsAllPersistedMenus()
+        {
+            await _repository.CreateAsync(CreateMenu(SandwichType.XBurger));
+            await _repository.CreateAsync(CreateMenu(SandwichType.XEgg, fries: true));
+
+            IEnumerable<Menu> result = await _repository.GetAllAsync();
+
+            Assert.Equal(2, result.Count());
+        }
+
+        [Fact]
+        public async Task GetAllAsync_EmptyDatabase_ReturnsEmptyList()
+        {
+            IEnumerable<Menu> result = await _repository.GetAllAsync();
+
+            Assert.Empty(result);
+        }
+
         // CreateAsync
 
         [Fact]

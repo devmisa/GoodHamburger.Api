@@ -34,6 +34,34 @@ namespace GoodHamburger.UnitTests.Services
             IncludeSoda = soda
         };
 
+        // GetAllAsync
+
+        [Fact]
+        public async Task GetAllAsync_ReturnsAllMenuResponses()
+        {
+            List<Menu> menus =
+            [
+                CreateMenu(1, SandwichType.XBurger),
+                CreateMenu(2, SandwichType.XEgg, fries: true),
+                CreateMenu(3, SandwichType.XBacon, fries: true, soda: true)
+            ];
+            _repositoryMock.Setup(r => r.GetAllAsync()).ReturnsAsync(menus);
+
+            IEnumerable<MenuResponse> result = await _service.GetAllAsync();
+
+            Assert.Equal(3, result.Count());
+        }
+
+        [Fact]
+        public async Task GetAllAsync_EmptyRepository_ReturnsEmptyList()
+        {
+            _repositoryMock.Setup(r => r.GetAllAsync()).ReturnsAsync([]);
+
+            IEnumerable<MenuResponse> result = await _service.GetAllAsync();
+
+            Assert.Empty(result);
+        }
+
         // Por ID
 
         [Fact]

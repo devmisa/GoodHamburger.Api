@@ -1,6 +1,7 @@
 ﻿using GoodHamburger.Domain.Entities;
 using GoodHamburger.Infrastructure.Data;
 using GoodHamburger.Infrastructure.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace GoodHamburger.Infrastructure.Repositories
@@ -8,6 +9,12 @@ namespace GoodHamburger.Infrastructure.Repositories
     public class GoodHamburgerRepository(AppDbContext context, ILogger<GoodHamburgerRepository> logger) : IGoodHamburgerRepository
     {
         private readonly AppDbContext _context = context;
+
+        public async Task<IEnumerable<Menu>> GetAllAsync()
+        {
+            logger.LogInformation("Listando todos os pedidos");
+            return await _context.Menus.ToListAsync();
+        }
 
         public async Task<Menu?> GetByIdAsync(int id)
         {

@@ -360,4 +360,12 @@ MigrationBackup/
 .ionide/
 
 # Fody - auto-generated XML schema
+
+# SQLite database files
+*.db
+*.db-shm
+*.db-wal
+
+# Serilog rolling log files
+logs/
 FodyWeavers.xsd
