@@ -7,7 +7,6 @@ using GoodHamburger.Infrastructure.Interfaces;
 using GoodHamburger.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
-using static GoodHamburger.Application.Dtos.MenuDto;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
